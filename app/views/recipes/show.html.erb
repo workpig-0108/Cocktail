@@ -1,0 +1,54 @@
+<div class = container>
+	<div class = row>
+
+		<div class = 'col-xs-6'>
+		<%= attachment_image_tag @recipe, :image, :fill, 300, 300,  fallback: "no_image_square.jpg"%>
+		</div>
+
+		<div class = 'col-xs-6'>
+			<table>
+				<thead>
+					<tr>
+						<th style="border:none;"></th>
+						<th style="border:none;"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td class="panel-body">
+							カクテル名
+						</td>
+						<td>
+							<%= @recipe.name %>
+						</td>
+					</tr>
+					<tr>
+						<td class="panel-body">
+							レシピ説明
+						</td>
+						<td class="panel-body">
+							<%= @recipe.discription %>
+						</td>
+					</tr>
+					<tr>
+						<td class="panel-body">
+							ジャンル
+						</td>
+						<td>
+							<%= @recipe.genre.name %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+						<%= link_to "編集する", edit_recipe_path(@recipe), class: "btn btn-primary" %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
