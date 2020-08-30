@@ -1,24 +1,28 @@
-# README
+# カクテイル
+## サイト概要
+カクテルレシピ投稿サイト
+オリジナルのカクテルをお家で安全に楽しんでもらえるサイトを作りました
+ユーザーは
+①カクテルのレシピ
+②カクテルの画像
+を投稿出来ます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+サイト利用者は
+①レシピに”いいね”
+②投稿に対するコメント
 
-Things you may want to cover:
+を行うことが出来ます。
+### サイトテーマ
+カクテルに憧れる人全員が楽しめるSNS
+### テーマを選んだ理由
+私はお酒が飲めない体質だが、カクテルの美しい世界に憧れを持っていました。
+カクテルの色彩豊かな世界を多くの人が触れられるようにしたいと思ったため、このテーマを選びました。
+### ターゲットユーザ
+20~40代　男女
+### 主な利用シーン
+・夫婦で夜にカクテルを作って飲む
+・レシピをみてモクテル（ノンアルコールのカクテル）をつくって、パーティーに出す
+## 設計書
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1k4s-EM6ycHdCVXDrMrra_jwG5E4YtA0iKjYj7osOlr4/edit#gid=0
