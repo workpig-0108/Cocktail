@@ -1,0 +1,50 @@
+<div class="container">
+
+		<div class="col-lg-3">
+			<h2>ユーザー情報</h2>
+				<table class='table table-hover table-inverse'>
+					<tr>
+					    <th style="border:none;"></th>
+					    	<td style="border:none;" >
+					      		<div class="form-group has-icon">
+								</div>
+							</td>
+							<div class="user-edit-image">
+				    		<%= attachment_image_tag @user, :profile_image, :fill, 30, 30,
+				    		class: "img-circle pull-left profile-thumb", fallback: "no_image_tate.jpg"%>
+				    		</div>
+				    </tr>
+				    <tbody>
+					    <tr>
+					    	<th>お名前</th>
+					    	<td><%= @user.name %></td>
+					    </tr>
+					</tbody>
+				</table>
+				<%= link_to "　ユーザー情報変更はこちら！", edit_user_path(@user), class:"glyphicon glyphicon-wrench btn btn-default col-xs-12" %>
+		</div>
+
+
+		<div class="col-lg-9">
+			<h2>投稿したレシピ</h2>
+				<table class='table table-hover table-inverse'>
+					<thead>
+						<tr>
+							<th style="border:none;">image</th>
+							<th style="border:none;">name</th>
+							<th style="border:none;">discription</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @recipes.each do |recipe| %>
+							<tr>
+								<td><%= attachment_image_tag @recipes, :image_id, :fill, 60, 60,class: "img-circle pull-left profile-thumb", fallback: "no_image_tate.jpg"%></td>
+								<td><%=link_to recipe.name, recipe_path(recipe) %></td>
+								<td><%= recipe.discription %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+		</div>
+
+</div>

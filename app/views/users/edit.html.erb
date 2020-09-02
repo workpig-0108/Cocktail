@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+
+		<h2>登録情報の編集</h2>
+			<%= form_for @user do |f| %>
+				<div class="field">
+					<h4>ニックネーム</h4>
+					<%= f.text_field :name %>
+				</div>
+				<div class="field">
+					<h4>写真を変更する</h4>
+					<%= f.attachment_field :profile_image %>
+				</div>
+
+				<div class="actions">
+					<%= f.submit 'Update User' %>
+				</div>
+			<% end %>
+
+
+	</div>
+</div>
