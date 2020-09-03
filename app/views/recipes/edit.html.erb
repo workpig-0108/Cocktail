@@ -1,0 +1,26 @@
+<div class='container'>
+
+	<h2>レシピ編集</h2>
+	    <%= form_for @recipe, url: recipe_path(@recipe) do |f| %>
+	    	<div class="field">
+	            <%= f.attachment_field :image %>
+	        </div>
+	        <div class="field">
+	            <h4>カクテル名</h4>
+	            <%= f.text_field :name %>
+	        </div>
+	        <div class="field">
+	            <h4>レシピ</h4>
+	            <%= f.text_area :discription %>
+	        </div>
+	        <div class="field">
+	            <h4>ジャンル</h4>
+	            <!%= f.collection_select :product_genre_id, @product_genre, :id, :name, include_blank: "-- 選択してください --" %>
+	        </div>
+
+	        <div class="actions">
+	        <%= f.submit '変更を保存' %>
+	        </div>
+	    <% end %>
+
+</div>

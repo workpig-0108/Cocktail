@@ -32,15 +32,13 @@
 						<tr>
 							<th style="border:none;">image</th>
 							<th style="border:none;">name</th>
-							<th style="border:none;">discription</th>
 						</tr>
 					</thead>
 					<tbody>
 						<% @recipes.each do |recipe| %>
 							<tr>
-								<td><%= attachment_image_tag @recipes, :image_id, :fill, 60, 60,class: "img-circle pull-left profile-thumb", fallback: "no_image_tate.jpg"%></td>
+								<td><!%= attachment_image_tag @recipes, :image, :fill, 60, 60,class: "img-circle pull-left profile-thumb", fallback: "no_image_tate.jpg"%></td>
 								<td><%=link_to recipe.name, recipe_path(recipe) %></td>
-								<td><%= recipe.discription %></td>
 							</tr>
 						<% end %>
 					</tbody>
