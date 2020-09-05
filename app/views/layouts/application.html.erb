@@ -10,13 +10,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body  class="back">
 
     <header class="navbar">
       <div class="container">
         <%= link_to root_path do %>
           <nav class="nav navbar-nav navbar-left">
-            <h1>Cocktail</h1>
+            <!%= image_tag "logoメダル.png" %>
           </nav>
         <% end %>
       </div>
@@ -60,8 +60,6 @@
 
     <div class="line">
     </div>
-
-
 
     <div>
       <%= yield %>
