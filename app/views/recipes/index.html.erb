@@ -15,6 +15,13 @@
 							<%= attachment_image_tag recipe, :image, :fill, 100, 100,  fallback: "no_image_tate.jpg"%>
 						<% end %>
 		 				<p><%= recipe.name %></p>
+		 				<li>By
+    						<%= recipe.user.name %>
+ 						</li>
+ 						<li>
+    						<%= link_to "#{recipe.post_comments.count} コメント", recipe_path(recipe.id) %>
+  </li>
+ 						</li>
 		 			</div>
 				<% end %>
 
