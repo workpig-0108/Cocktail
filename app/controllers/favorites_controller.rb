@@ -1,12 +1,12 @@
 class FavoritesController < ApplicationController
 	def create
-		@recipe = recipe.find(params[:recipe_id])
+		@recipe = Recipe.find(params[:recipe_id])
     	favorite = @recipe.favorites.new(user_id: current_user.id)
     	favorite.save
 	end
 
 	def destroy
-		@recipe = recipe.find(params[:recipe_id])
+		@recipe = Recipe.find(params[:recipe_id])
     	favorite = current_user.favorites.find_by(recipe_id: @recipe.id)
     	favorite.destroy
 	end

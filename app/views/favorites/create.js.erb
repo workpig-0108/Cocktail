@@ -1,5 +1,1 @@
-if (location.pathname == '/recipes') {
-  $(".recipe_<%= @recipe.id %>").html("<%= j(render 'recipes/recipe',  recipe: @recipe ) %>")
-} else {
-  $(".recipe_<%= @recipe.id %>").html("<%= j(render 'recipes/detail',  recipe: @recipe ) %>")
-}
+$(".recipe-detail").html("<%= j(render 'recipes/detail',  recipe: @recipe ) %>")

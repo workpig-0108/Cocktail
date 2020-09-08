@@ -17,10 +17,10 @@
 				<tbody>
 					<tr>
 						<td class="panel-body">
-							カクテル名
+							<h2>カクテル名</h2>
 						</td>
 						<td>
-							<%= @recipe.name %>
+							<h2><%= @recipe.name %></h2>
 						</td>
 					</tr>
 					<tr>
@@ -40,62 +40,54 @@
 						</td>
 					</tr>
 					<tr>
-						<td>
-							<i class="fa fa-comment"></i>
-							<a href="#comments">
-								<%= @recipe.post_comments.count %>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<div class="comment-list bt style-2" id="comments">
-  							<div class="float-wrapper">
-	    						<h2 class="comment-count">
-	    							<%= @recipe.post_comments.count %>件コメント
-	    						</h2>
-  							</div>
-  						</div>
+						<td class="panel-body">
+	    					<%= @recipe.post_comments.count %>件コメント
+  						</td>
 					</tr>
 				</tbody>
 			</table>
-			<ol>
+			<table>
 			 	<% @recipe.post_comments.each do |post_comment| %>
-			    	<li class="comment">
-				      	<div class="comment-body bb">
-				        	<div class="comment-avatar">
-				        	</div>
-				        	<div class="comment-text">
-				          		<div class="comment-author clearfix">
-				            		<a href="#" class="link-author">
-				            			<%= post_comment.user.name %>
-				            		</a>
-				            <span class="comment-meta">
-				             <span class="comment-date"><%= post_comment.created_at.strftime('%Y/%m/%d') %></span>
-				           	</span>
-				          </div>
-				          <div class="comment-entry"><%= post_comment.comment %></div>
-				          <% if post_comment.user == current_user %>
-				            <div>
-				              <%= link_to "削除", recipe_post_comment_path(post_comment.recipe, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
-				            </div>
-				          <% end %>
-				        </div>
-				      </div>
-				    </li>
+			 		<thead>
+						<tr>
+							<th style="border:none;"></th>
+							<th style="border:none;"></th>
+							<th style="border:none;"></th>
+							<th style="border:none;"></th>
+							<th style="border:none;"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="panel-body">
+			            		<a href="#" class="link-author">
+			            			<%= post_comment.user.name %>
+			            		</a>
+		            		</td>
+		            		<td class="panel-body">
+		            			<%= post_comment.created_at.strftime('%Y/%m/%d') %>
+		            		</td>
+		            		<td class="panel-body">
+		            			<%= post_comment.comment %>
+		            		</td>
+		            		<td class="panel-body">
+		            			<% if post_comment.user == current_user %>
+					            	<%= link_to "削除", recipe_post_comment_path(post_comment.recipe, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
+					          	<% end %>
+		            		</td>
+		            	</tr>
+		            	<tr class="recipe-detail">
+		            		<%= render '/recipes/detail', recipe: @recipe %>
+		            	</tr>
+				    <tbody>
 			  <% end %>
-			</ol>
-			<%= form_for [@recipe, @post_comment] do |f| %>
-			  	<div class="row">
-			    	<div class="col-sm-12">
-			      		<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
-			    	</div>
-			  	</div>
-			  <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
-			<% end %>
+			<table>
+				<%= form_for [@recipe, @post_comment] do |f| %>
+		      		<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
 
-			<div>
-				<%= render '/recipes/detail', recipe: @recipe %>
-			</div>
+		  			<%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+				<% end %>
+			</table>
 
 	</div>
 </div>
