@@ -93,21 +93,9 @@
 			  <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
 			<% end %>
 
-			<% if @recipe.favorited_by?(current_user) %>
-				<li>
-				  <%= link_to recipe_favorites_path(@recipe), method: :delete, remote: true do %>
-				    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-				    <%= @recipe.favorites.count %> いいね
-				  <% end %>
-				</li>
-				<% else %>
-				<li>
-				  <%= link_to recipe_favorites_path(@recipe), method: :post do %>
-				    <i class="fa fa-heart-o" aria-hidden="true"></i>
-				    <%= @recipe.favorites.count %> いいね
-				  <% end %>
-				</li>
-			<% end %>
+			<div>
+				<%= render '/recipes/detail', recipe: @recipe %>
+			</div>
 
 	</div>
 </div>
