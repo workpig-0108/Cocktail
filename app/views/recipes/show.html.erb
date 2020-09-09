@@ -36,19 +36,24 @@
 	    					<%= @recipe.post_comments.count %>件コメント
   						</td>
 					</tr>
+	            	<tr class="recipe-detail">
+	            		<td>
+	            			<%= render 'recipes/detail', recipe: @recipe %>
+	            		</td>
+	            	</tr>
 				</tbody>
 			</table>
 			<table>
+		 		<thead>
+					<tr>
+						<th style="border:none;"></th>
+						<th style="border:none;"></th>
+						<th style="border:none;"></th>
+						<th style="border:none;"></th>
+						<th style="border:none;"></th>
+					</tr>
+				</thead>
 			 	<% @recipe.post_comments.each do |post_comment| %>
-			 		<thead>
-						<tr>
-							<th style="border:none;"></th>
-							<th style="border:none;"></th>
-							<th style="border:none;"></th>
-							<th style="border:none;"></th>
-							<th style="border:none;"></th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr>
 							<td class="panel-body">
@@ -67,9 +72,6 @@
 					            	<%= link_to "削除", recipe_post_comment_path(post_comment.recipe, post_comment), method: :delete, class: "btn btn-danger pull-right" %>
 					          	<% end %>
 		            		</td>
-		            	</tr>
-		            	<tr class="recipe-detail">
-		            		<%= render '/recipes/detail', recipe: @recipe %>
 		            	</tr>
 				    <tbody>
 			  <% end %>
