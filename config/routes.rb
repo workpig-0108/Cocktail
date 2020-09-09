@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 		resource :favorites, only: [:create, :destroy]
 		resources :post_comments, only: [:create, :destroy]
 	end
-	get "genres/:id" => "genres#show", as: "genre"
-	#indexページは部分テンプレートのsidebarと同じ役割なので、showページのみ残しました。
 	root 'homes#top'
 	get 'about' => 'homes#about'
 end
