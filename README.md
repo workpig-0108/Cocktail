@@ -24,5 +24,10 @@
 ・レシピをみてモクテル（ノンアルコールのカクテル）をつくって、パーティーに出す
 ## 設計書
 
+## 開発環境
+#MACを使用
+#・テキストエディタはSublime Text
+#・Vagrant環境でポートフォリオを作成
+
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1k4s-EM6ycHdCVXDrMrra_jwG5E4YtA0iKjYj7osOlr4/edit#gid=0
