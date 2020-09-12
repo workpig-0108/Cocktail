@@ -75,13 +75,13 @@
 		            	</tr>
 				    <tbody>
 			  <% end %>
-			<table>
-				<%= form_for [@recipe, @post_comment] do |f| %>
+			<%= form_for [@recipe, @post_comment] do |f| %>
+				<table>
 		      		<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
 
 		  			<%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
-				<% end %>
-			</table>
+				</table>
+			<% end %>
 
 	</div>
 </div>
